@@ -4,8 +4,18 @@ import java.util.ArrayList;
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    private int[] fishTraits = new int[20];
+    public int[] fishTraits = new int[21];
+    FishDataBase(String fish){
+        fishStats(fish);
+    }
 
+    public int[] fishStats(String fish){
+        if (fish.equalsIgnoreCase("tilapia"))
+            tilapia();
+
+
+        return null;
+    }
 //    private void genericFish(){
 //        fishTraits[0] = length;
 //        fishTraits[1] = height;
@@ -26,8 +36,33 @@ public class FishDataBase {
 //        fishTraits[16] = eggLength;
 //        fishTraits[17] = fat;
 //        fishTraits[18] = fatGrowth;
-//        fishTraits[19] = reproduction;
+//        fishTraits[19] = reproduction
+//        fishTraits[20] = name
 //    }
+
+    private void tilapia(){
+        fishTraits[0] = 1;
+        fishTraits[1] = 1;
+        fishTraits[2] = 1;
+        fishTraits[3] = 1;
+        fishTraits[4] = 1;
+        fishTraits[5] = 1;
+        fishTraits[6] = 1;
+        fishTraits[7] = 1;
+        fishTraits[8] = 1;
+        fishTraits[9] = 1;
+        fishTraits[10] = 1;
+        fishTraits[11] = 1;
+        fishTraits[12] = 1;
+        fishTraits[13] = 1;
+        fishTraits[14] = 1;
+        fishTraits[15] = 1;
+        fishTraits[16] = 1;
+        fishTraits[17] = 1;
+        fishTraits[18] = 1;
+        fishTraits[19] = 1;
+        fishTraits[20] = 1;
+    }
 
 
 
