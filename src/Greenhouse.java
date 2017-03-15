@@ -1,7 +1,6 @@
 /**
  * Created by student5 on 3/15/17.
  */
-public class Greenhouse {
-    private int height,length,width;
+public class Greenhouse extends Container {
     private Conditions greenHouseConditions;
 }
