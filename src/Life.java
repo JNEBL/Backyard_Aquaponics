@@ -2,5 +2,5 @@
  * Created by student5 on 3/15/17.
  */
 public class Life {
-    private int energy;
+    protected int energy;
 }
