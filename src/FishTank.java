@@ -5,4 +5,5 @@ import java.util.ArrayList;
  */
 public class FishTank extends Container {
     ArrayList<School> schools = new ArrayList<>();
+    private Water water;
 }
