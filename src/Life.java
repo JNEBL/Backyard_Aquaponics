@@ -3,5 +3,5 @@
  */
 public class Life {
     private int energy;
-    
+
 }

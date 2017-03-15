@@ -1,5 +1,5 @@
 /**
  * Created by student5 on 3/15/17.
  */
-public class Bacteria {
+public class Bacteria extends Life {
 }
