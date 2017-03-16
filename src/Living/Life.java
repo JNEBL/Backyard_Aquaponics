@@ -11,4 +11,8 @@ public class Life {
     public String getName() {
         return name;
     }
+
+    public String getGender() {
+        return gender;
+    }
 }

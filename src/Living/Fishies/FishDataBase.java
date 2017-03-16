@@ -19,10 +19,8 @@ public class FishDataBase {
     }
 
     private int[] fishStats(String fish){
-        if (fish.equalsIgnoreCase("Sushi Living.Fishies.Fish"))
+        if (fish.equalsIgnoreCase("SushiFish")||fish.equalsIgnoreCase("Sushi Fish"))
             SushiFish();
-
-
         return null;
     }
 
@@ -74,7 +72,7 @@ public class FishDataBase {
         fishTraits[19] = 1;
         fishTraits[20] = 1;
         fishTraits[21] = 1;
-        name = "Sushi Living.Fishies.Fish";
+        name = "Sushi Fish";
     }
 
 }
