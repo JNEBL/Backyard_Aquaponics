@@ -105,6 +105,12 @@ public class Fish extends Life{
     public boolean getGender() {
         return gender;
     }
+    public int getMaxAge() {
+        return maxAge;
+    }
+    public int getVolume() {
+        return volume;
+    }
 
     private boolean randomGenderSelection(){
         double randomness = Math.random();
