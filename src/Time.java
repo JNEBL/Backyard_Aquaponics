@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
  */
 public class Time {
     DecimalFormat format = new DecimalFormat("00");
+    DecimalFormat f = new DecimalFormat("0000");
     private int year,month,day,hour,minute,second;
     public Time(){
         setYear(1);
@@ -54,31 +55,38 @@ public class Time {
             }
         }
     }
-
     public void incrementTime(int sec){
         for (int x = 0;x<sec;x++){
-            second++;
-            if (second >= 60){
-                setSecond(0);
-                minute++;
-                if (minute >= 60){
-                    setMinute(0);
-                    hour++;
-                    if (hour > 12) {
-                        setHour(1);
-                        day++;
-                        if (day > 28){
-                            setDay(1);
-                            month++;
-                            if (month > 13){
-                                setMonth(1);
-                                year++;
-                            }
-                        }
-                    }
-                }
-            }
+            incrementTime();
         }
+    }
+    public void incrementTimeByMinute(int min){
+        int sec = 60 * min;
+        incrementTime(sec);
+    }
+    public void incrementTimeByHalfAnHour(int halfHour){
+        int min = 30 * halfHour;
+        incrementTimeByMinute(min);
+    }
+    public void incrementTimeByHour(int H){
+        int min = 60 * H;
+        incrementTimeByMinute(min);
+    }
+    public void incrementTimeByDay(int D){
+        int H = 60 * D;
+        incrementTimeByHour(H);
+    }
+    public void incrementTimeByWeek(int week){
+        int D = 7 * week;
+        incrementTimeByDay(D);
+    }
+    public void incrementTimeByMonth(int M){
+        int D = 28 * M;
+        incrementTimeByDay(D);
+    }
+    public void incrementTimeByYear(int Y){
+        int M = 13 * Y;
+        incrementTimeByMonth(M);
     }
 
     public int getHour(){
@@ -130,7 +138,8 @@ public class Time {
     }
 
     public String toString(){
-        String time = format.format(hour) + ":" + format.format(minute) + ":" + format.format(second);
+        String date = "Date  "+format.format(day) +"."+format.format(month)+"."+f.format(year)+"    ";
+        String time = date+"Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
         return time;
     }
 }
