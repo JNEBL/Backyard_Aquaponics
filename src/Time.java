@@ -137,9 +137,17 @@ public class Time {
             this.year = year;
     }
 
-    public String toString(){
+    public String toStringFull(){
         String date = "Date  "+format.format(day) +"."+format.format(month)+"."+f.format(year)+"    ";
         String time = date+"Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
+        return time;
+    }
+    public String toStringDate(){
+        String date = "Date  "+format.format(day) +"."+format.format(month)+"."+f.format(year);
+        return date;
+    }
+    public String toStringTime(){
+        String time = "Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
         return time;
     }
 }

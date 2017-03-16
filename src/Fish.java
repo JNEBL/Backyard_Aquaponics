@@ -2,11 +2,11 @@
  * Created by student5 on 3/15/17.
  */
 public class Fish extends Life{
-    protected int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
+    private int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
             age,birthAge,eggLength,fat,reproduction,volume,deathAge,metabolism,hunger;
     private String name;
-    protected Boolean gender,carnivore,herbivore;
-    protected FishDataBase fishDataBase;
+    private Boolean gender,carnivore,herbivore;
+    private FishDataBase fishDataBase;
     Fish(String fish,boolean gender){
         this.name=fishDataBase.getName();
         this.gender = gender;
