@@ -3,9 +3,9 @@
  */
 public class Fish extends Life{
     protected int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
-            age,birthAge,eggLength,fat,reproduction,volume,deathAge,metabolism;
+            age,birthAge,eggLength,fat,reproduction,volume,deathAge,metabolism,hunger;
     private String name;
-    protected Boolean gender;
+    protected Boolean gender,carnivore,herbivore;
     protected FishDataBase fishDataBase;
     Fish(String fish,boolean gender){
         this.name=fishDataBase.getName();
@@ -27,6 +27,5 @@ class FishDecider{
     }
     public void lengthDecider(){
         //fishtype  age   metabolism
-        
     }
 }
