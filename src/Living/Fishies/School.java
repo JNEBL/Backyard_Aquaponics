@@ -8,13 +8,13 @@ import java.util.ArrayList;
 public class School{
     ArrayList<Fish> fishSchool = new ArrayList<>();
     private Fish fish;
-    School(int numFish,String fishName){
+    public School(int numFish,String fishName){
         for (int x = 0;x<numFish;x++){
             fish = new Fish(fishName);
             fishSchool.add(fish);
         }
     }
-    School(String fishName,int femFish,int malFish){
+    public School(String fishName,int femFish,int malFish){
         for (int x = 0;x<malFish;x++){
             fish = new Fish(fishName,false);
             fishSchool.add(fish);

@@ -10,7 +10,7 @@ public class Time {
     DecimalFormat f = new DecimalFormat("0000");
     private int year,month,day,hour,minute,second;
     public Time(){
-        setYear(1);
+        setYear(0);
         setMonth(1);
         setDay(1);
         setHour(12);
@@ -42,7 +42,7 @@ public class Time {
             if (minute >= 60){
                 setMinute(0);
                 hour++;
-                if (hour > 12) {
+                if (hour > 24) {
                     setHour(1);
                     day++;
                     if (day > 28){
@@ -75,7 +75,7 @@ public class Time {
         incrementTimeByMinute(min);
     }
     public void incrementTimeByDay(int D){
-        int H = 60 * D;
+        int H = 24 * D;
         incrementTimeByHour(H);
     }
     public void incrementTimeByWeek(int week){
@@ -95,7 +95,7 @@ public class Time {
         return this.hour;
     }
     public void setHour(int x){
-        if (x > 0 && x <= 12)
+        if (x > 0 && x <= 24)
             this.hour = x;
     }
 
@@ -135,13 +135,13 @@ public class Time {
         return year;
     }
     public void setYear(int year) {
-        if (year>0)
+        if (year>=0)
             this.year = year;
     }
 
     public String toStringFull(){
         String date = "Date  "+format.format(day) +"."+format.format(month)+"."+f.format(year)+"    ";
-        String time = date+"Inorganic.Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
+        String time = date+"Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
         return time;
     }
     public String toStringDate(){
@@ -149,7 +149,7 @@ public class Time {
         return date;
     }
     public String toStringTime(){
-        String time = "Inorganic.Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
+        String time = "Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
         return time;
     }
 }

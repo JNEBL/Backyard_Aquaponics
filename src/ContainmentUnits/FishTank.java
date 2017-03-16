@@ -15,11 +15,11 @@ public class FishTank extends Container {
     private Water water;
     private School school;
     public void addNonGenderSpecificFishSchool(int numFish,String fishName){
-        school = new School(numFish,fishName);
+        school = new Living.Fishies.School(numFish,fishName);
         schools.add(school);
     }
     public void addGenderSpecificFishSchool(String fishName,int femFish,int malFish){
-        school = new School(fishName,femFish,malFish);
+        school = new Living.Fishies.School(fishName,femFish,malFish);
         schools.add(school);
     }
 }
