@@ -4,7 +4,8 @@
 public class Fish extends Life {
     private int length,height,width,mouthSize,speed,lengthGrowth,heightGrowth,widthGrowth,
             mouthSizeGrowth,ammoniumProduction,meat,meatGrowth,mass,massGrowth,
-            age,birthAge,eggLength,fat,fatGrowth,reproduction,name;
+            age,birthAge,eggLength,fat,fatGrowth,reproduction;
+    private String name;
     Fish(String fish){
         FishDataBase fishDataBase = new FishDataBase(fish);
         length = fishDataBase.fishTraits[0];
@@ -27,6 +28,7 @@ public class Fish extends Life {
         fat=fishDataBase.fishTraits[17];
         fatGrowth=fishDataBase.fishTraits[18];
         reproduction=fishDataBase.fishTraits[19];
-        name=fishDataBase.fishTraits[20];
+        this.name=name;
     }
+    
 }
