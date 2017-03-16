@@ -17,12 +17,14 @@ public class FishDataBase {
     }
 
     private int[] fishStats(String fish){
-        if (fish.equalsIgnoreCase("tilapia"))
-            tilapia();
+        if (fish.equalsIgnoreCase("Sushi Fish"))
+            SushiFish();
 
 
         return null;
     }
+
+
 //    private void genericFish(){
 //        fishTraits[0] = length;
 //        fishTraits[1] = height;
@@ -47,7 +49,7 @@ public class FishDataBase {
 //        name = name
 //    }
 
-    private void tilapia(){
+    private void SushiFish(){
         fishTraits[0] = 1;
         fishTraits[1] = 1;
         fishTraits[2] = 1;
@@ -70,9 +72,7 @@ public class FishDataBase {
         fishTraits[19] = 1;
         fishTraits[20] = 1;
         fishTraits[21] = 1;
-        name = "Tilapia";
+        name = "Sushi Fish";
     }
-
-
 
 }
