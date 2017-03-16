@@ -4,10 +4,16 @@ import java.util.ArrayList;
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    public int[] fishTraits = new int[20];
-    public String name;
+    private int[] fishTraits = new int[20];
+    private String name;
     FishDataBase(String fish){
         fishStats(fish);
+    }
+    public int fishTrait(int x){
+        return fishTraits[x];
+    }
+    public String getName(){
+        return name;
     }
 
     public int[] fishStats(String fish){
@@ -38,7 +44,7 @@ public class FishDataBase {
 //        fishTraits[17] = fat;
 //        fishTraits[18] = fatGrowth;
 //        fishTraits[19] = reproduction
-//        fishTraits[20] = name
+//        name = name
 //    }
 
     private void tilapia(){

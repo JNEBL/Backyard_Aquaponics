@@ -8,27 +8,27 @@ public class Fish extends Life {
     private String name;
     Fish(String fish){
         FishDataBase fishDataBase = new FishDataBase(fish);
-        length = fishDataBase.fishTraits[0];
-        height =fishDataBase.fishTraits[1];
-        width =fishDataBase.fishTraits[2];
-        mouthSize =fishDataBase.fishTraits[3];
-        speed =fishDataBase.fishTraits[4];
-        lengthGrowth =fishDataBase.fishTraits[5];
-        heightGrowth=fishDataBase.fishTraits[6];
-        widthGrowth=fishDataBase.fishTraits[7];
-        mouthSizeGrowth=fishDataBase.fishTraits[8];
-        ammoniumProduction=fishDataBase.fishTraits[9];
-        meat=fishDataBase.fishTraits[10];
-        meatGrowth=fishDataBase.fishTraits[11];
-        mass=fishDataBase.fishTraits[12];
-        massGrowth=fishDataBase.fishTraits[13];
-        age=fishDataBase.fishTraits[14];
-        birthAge=fishDataBase.fishTraits[15];
-        eggLength=fishDataBase.fishTraits[16];
-        fat=fishDataBase.fishTraits[17];
-        fatGrowth=fishDataBase.fishTraits[18];
-        reproduction=fishDataBase.fishTraits[19];
-        this.name=name;
+        length = fishDataBase.fishTrait(0);
+        height =fishDataBase.fishTrait(1);
+        width =fishDataBase.fishTrait(2);
+        mouthSize =fishDataBase.fishTrait(3);
+        speed =fishDataBase.fishTrait(4);
+        lengthGrowth =fishDataBase.fishTrait(5);
+        heightGrowth=fishDataBase.fishTrait(6);
+        widthGrowth=fishDataBase.fishTrait(7);
+        mouthSizeGrowth=fishDataBase.fishTrait(8);
+        ammoniumProduction=fishDataBase.fishTrait(9);
+        meat=fishDataBase.fishTrait(10);
+        meatGrowth=fishDataBase.fishTrait(11);
+        mass=fishDataBase.fishTrait(12);
+        massGrowth=fishDataBase.fishTrait(13);
+        age=fishDataBase.fishTrait(14);
+        birthAge=fishDataBase.fishTrait(15);
+        eggLength=fishDataBase.fishTrait(16);
+        fat=fishDataBase.fishTrait(17);
+        fatGrowth=fishDataBase.fishTrait(18);
+        reproduction=fishDataBase.fishTrait(19);
+        this.name=fishDataBase.getName();
     }
 
 }
