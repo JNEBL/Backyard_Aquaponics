@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    private int[] fishTraits = new int[20];
+    private int[] fishTraits = new int[22];
     private String name;
     FishDataBase(String fish){
         fishStats(fish);
@@ -68,6 +68,8 @@ public class FishDataBase {
         fishTraits[17] = 1;
         fishTraits[18] = 1;
         fishTraits[19] = 1;
+        fishTraits[20] = 1;
+        fishTraits[21] = 1;
         name = "Tilapia";
     }
 
