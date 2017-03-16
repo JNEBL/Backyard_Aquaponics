@@ -8,12 +8,12 @@ public class Fish extends Life {
     private String name;
     Fish(String fish){
         FishDataBase fishDataBase = new FishDataBase(fish);
-        length = fishDataBase.fishTrait(0);
-        height =fishDataBase.fishTrait(1);
+        length=fishDataBase.fishTrait(0);
+        height=fishDataBase.fishTrait(1);
         width =fishDataBase.fishTrait(2);
         mouthSize =fishDataBase.fishTrait(3);
-        speed =fishDataBase.fishTrait(4);
-        lengthGrowth =fishDataBase.fishTrait(5);
+        speed=fishDataBase.fishTrait(4);
+        lengthGrowth=fishDataBase.fishTrait(5);
         heightGrowth=fishDataBase.fishTrait(6);
         widthGrowth=fishDataBase.fishTrait(7);
         mouthSizeGrowth=fishDataBase.fishTrait(8);
@@ -31,4 +31,69 @@ public class Fish extends Life {
         this.name=fishDataBase.getName();
     }
 
+    public int getAge() {
+        return age;
+    }
+    public int getAmmoniumProduction() {
+        return ammoniumProduction;
+    }
+    public int getBirthAge() {
+        return birthAge;
+    }
+    public int getEggLength() {
+        return eggLength;
+    }
+    public int getFat() {
+        return fat;
+    }
+    public int getFatGrowth() {
+        return fatGrowth;
+    }
+    public int getHeight() {
+        return height;
+    }
+    public int getHeightGrowth() {
+        return heightGrowth;
+    }
+    public int getLength() {
+        return length;
+    }
+    public int getLengthGrowth() {
+        return lengthGrowth;
+    }
+    public int getMass() {
+        return mass;
+    }
+    public int getMassGrowth() {
+        return massGrowth;
+    }
+    public int getMeat() {
+        return meat;
+    }
+    public int getMeatGrowth() {
+        return meatGrowth;
+    }
+    public int getMouthSize() {
+        return mouthSize;
+    }
+    public int getMouthSizeGrowth() {
+        return mouthSizeGrowth;
+    }
+    public int getReproduction() {
+        return reproduction;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+    public int getWidth() {
+        return width;
+    }
+    public int getWidthGrowth() {
+        return widthGrowth;
+    }
+    public String getName() {
+        return name;
+    }
+
+    
 }

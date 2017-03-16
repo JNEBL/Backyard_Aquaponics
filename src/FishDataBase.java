@@ -16,7 +16,7 @@ public class FishDataBase {
         return name;
     }
 
-    public int[] fishStats(String fish){
+    private int[] fishStats(String fish){
         if (fish.equalsIgnoreCase("tilapia"))
             tilapia();
 
