@@ -5,5 +5,6 @@ import java.util.ArrayList;
  */
 public class GrowBed extends Container{
     ArrayList<PlantGrouping> plantGroupings = new ArrayList<>();
+    private ArrayList<Colony> colonies = new ArrayList<>();
     private Water water;
 }

@@ -30,5 +30,5 @@ public class Fish extends Life {
         reproduction=fishDataBase.fishTraits[19];
         this.name=name;
     }
-    
+
 }
