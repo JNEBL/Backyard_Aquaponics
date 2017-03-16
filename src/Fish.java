@@ -4,7 +4,7 @@
 public class Fish extends Life {
     private int length,height,width,mouthSize,speed,lengthGrowth,heightGrowth,widthGrowth,
             mouthSizeGrowth,ammoniumProduction,meat,meatGrowth,mass,massGrowth,
-            age,birthAge,eggLength,fat,fatGrowth,reproduction;
+            age,birthAge,eggLength,fat,fatGrowth,reproduction,volume;
     private String name;
     private Boolean gender;
     private FishDataBase fishDataBase;
