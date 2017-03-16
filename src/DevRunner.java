@@ -13,7 +13,7 @@ public class DevRunner {
         School e = new School("Sushi Fish",60,40);
         School f = new School("Sushi Fish",200,150);
 
-        System.out.println(d.report());
+        System.out.println(a.report());
 
 }
 }

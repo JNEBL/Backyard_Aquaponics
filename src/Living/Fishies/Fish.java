@@ -32,7 +32,7 @@ public class Fish extends Life {
 class FishDecider{
     public static String randomGenderSelection(){
         double randomness = Math.random();
-        if (randomness<.5)
+        if (randomness<.2)
             return "Female";
         else
             return "Male";

@@ -71,7 +71,7 @@ public class School{
         genders[0] = 0;
         genders[1] = 0;
         for (int x = 0;x < fishSchool.size();x++){
-            if (fishSchool.get(x).getGender().equalsIgnoreCase("Females"))
+            if (fishSchool.get(x).getGender().equalsIgnoreCase("Female"))
                 genders[0]++;
             else
                 genders[1]++;
