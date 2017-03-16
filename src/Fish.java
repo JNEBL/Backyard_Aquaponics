@@ -7,8 +7,9 @@ public class Fish extends Life {
             age,birthAge,eggLength,fat,fatGrowth,reproduction;
     private String name;
     private Boolean gender;
+    FishDataBase fishDataBase;
     Fish(String fish){
-        FishDataBase fishDataBase = new FishDataBase(fish);
+        fishDataBase = new FishDataBase(fish);
         length=fishDataBase.fishTrait(0);
         height=fishDataBase.fishTrait(1);
         width =fishDataBase.fishTrait(2);
@@ -33,7 +34,7 @@ public class Fish extends Life {
         randomGenderSelection();
     }
     Fish(String fish,boolean gender){
-        FishDataBase fishDataBase = new FishDataBase(fish);
+        fishDataBase = new FishDataBase(fish);
         length=fishDataBase.fishTrait(0);
         height=fishDataBase.fishTrait(1);
         width =fishDataBase.fishTrait(2);
