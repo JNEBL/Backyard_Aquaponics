@@ -8,10 +8,9 @@ import Living.Life;
 public class Fish extends Life {
     private int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
             age,birthAge,eggLength,fat,reproduction,volume,deathAge,metabolism,hunger;
-    private String name;
-    private Boolean gender,carnivore,herbivore;
+
     private FishDataBase fishDataBase;
-    Fish(String fish,boolean gender){
+    Fish(String fish,String gender){
         this.name=fishDataBase.getName();
         this.gender = gender;
     }
@@ -19,15 +18,18 @@ public class Fish extends Life {
         this(fish,FishDecider.randomGenderSelection());
     }
 
-
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 }
 class FishDecider{
-    public static boolean randomGenderSelection(){
+    public static String randomGenderSelection(){
         double randomness = Math.random();
         if (randomness<.5)
-            return true;
+            return "Female";
         else
-            return false;
+            return "Male";
     }
     public void lengthDecider(){
         //fishtype  age   metabolism

@@ -16,12 +16,18 @@ public class School{
     }
     public School(String fishName,int femFish,int malFish){
         for (int x = 0;x<malFish;x++){
-            fish = new Fish(fishName,false);
+            fish = new Fish(fishName,"Male");
             fishSchool.add(fish);
         }
         for (int x = 0;x<femFish;x++){
-            fish = new Fish(fishName,true);
+            fish = new Fish(fishName,"Female");
             fishSchool.add(fish);
         }
+    }public void addFish(Fish f){
+        if (getFishType().equalsIgnoreCase(f.getName()))
+            fishSchool.add(f);
+    }
+    public String getFishType(){
+        return fishSchool.get(0).getName();
     }
 }
