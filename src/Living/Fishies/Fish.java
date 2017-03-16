@@ -1,5 +1,6 @@
 package Living.Fishies;
 
+import Inorganic.Time;
 import Living.Life;
 
 /**
@@ -7,7 +8,8 @@ import Living.Life;
  */
 public class Fish extends Life {
     private int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
-            age,birthAge,eggLength,fat,reproduction,volume,deathAge,metabolism,hunger;
+            age,eggLength,fat,reproduction,volume,metabolism,hunger;
+    private Time fingerlingEndAge,breedingAge,deathAge;
     private int[] ageRatio;
 
     private FishDataBase fishDataBase;
@@ -37,7 +39,7 @@ class FishDecider{
         else
             return "Male";
     }
-    public void lengthDecider(){
-        //fishtype  age   metabolism
+    public void deathAgeDecider(int probableDeath){
+
     }
 }

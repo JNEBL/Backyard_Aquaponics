@@ -32,7 +32,7 @@ public class School{
     }
     public String reportGender(){
         int[] both = getBothGenders();
-        String print = "ratio:FEMALES:MALES      ratio:" + getGenderRatio() +
+        String print = "Ratio:" + getGenderRatio() +
                 "\nFemales:"+both[0] + "     Males:"+both[1];
         return print;
     }
