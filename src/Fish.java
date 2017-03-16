@@ -112,7 +112,7 @@ public class Fish extends Life{
         return volume;
     }
 
-    private boolean randomGenderSelection(){
+    public static boolean randomGenderSelection(){
         double randomness = Math.random();
         if (randomness<.5)
             return true;
