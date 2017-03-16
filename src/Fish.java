@@ -7,7 +7,7 @@ public class Fish extends Life {
             age,birthAge,eggLength,fat,fatGrowth,reproduction;
     private String name;
     private Boolean gender;
-    FishDataBase fishDataBase;
+    private FishDataBase fishDataBase;
     Fish(String fish){
         fishDataBase = new FishDataBase(fish);
         length=fishDataBase.fishTrait(0);
