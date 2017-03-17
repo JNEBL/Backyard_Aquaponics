@@ -37,7 +37,7 @@ public class FishDataBase {
         fishTraits[0] = 4;
         fishTraits[1] = 2;
         fishTraits[2] = 34;
-        dFishTraits[0] = .1;
+        dFishTraits[0] = .15;
     }
 
 }

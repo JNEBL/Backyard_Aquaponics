@@ -54,19 +54,19 @@ class FishDecider{
         if (odds > .92)
             percentVariance += .4;
         double percent = probableDeath * percentVariance;
-        double higherDeath = probableDeath + percent;
-        double lowerDeath = probableDeath - percent;
         double variance = percent * Math.random();
         if (odds<.44){
             variance = variance * -1;
         }
         double variable = probableDeath + variance;
-        if (variable < lowerDeath)
-            variable = lowerDeath;
-        if (variable > higherDeath)
-            variable = higherDeath;
         int year = (int)(variable);
-        time.incrementTimeByYear(year);
+        time.setYear(year);
+        int month = (int)(13 * Math.random());
+        time.setMonth(month);
+        int day = (int)(28 * Math.random());
+        time.setDay(day);
+        int hour = (int)(24 * Math.random());
+        time.setHour(hour);
         return time;
     }
 }
