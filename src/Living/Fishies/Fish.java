@@ -51,8 +51,10 @@ class FishDecider{
     }
     public static Time deathAgeDecider(int probableDeath,double percentVariance,Time time){
         double odds = Math.random();
+        if (odds > .9996)
+            percentVariance *= 2;
         if (odds > .92)
-            percentVariance += .4;
+            percentVariance *= 2;
         double percent = probableDeath * percentVariance;
         double variance = percent * Math.random();
         if (odds<.44){
