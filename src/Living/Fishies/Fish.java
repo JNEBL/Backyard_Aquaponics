@@ -62,13 +62,10 @@ class FishDecider{
         }
         double variable = probableDeath + variance;
         int year = (int)(variable);
-        time.setYear(year);
         int month = (int)(13 * Math.random());
-        time.setMonth(month);
         int day = (int)(28 * Math.random());
-        time.setDay(day);
         int hour = (int)(24 * Math.random());
-        time.setHour(hour);
+        time.setAllTime(year,month,day,hour,0,0);
         return time;
     }
 }

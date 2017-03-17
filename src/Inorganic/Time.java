@@ -139,6 +139,15 @@ public class Time {
             this.year = year;
     }
 
+    public void setAllTime(int year,int month,int day,int hour, int minute, int second){
+        setYear(year);
+        setMonth(month);
+        setDay(day);
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
+    }
+
     public String toStringFull(){
         String date = "Date  "+format.format(day) +"."+format.format(month)+"."+f.format(year)+"    ";
         String time = date+"Time ("+format.format(hour) + ":" + format.format(minute) + ":" + format.format(second)+")";
