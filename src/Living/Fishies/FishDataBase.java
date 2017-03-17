@@ -6,14 +6,17 @@ import java.util.ArrayList;
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    private int[] fishTraits = new int[22];
-    private int[][] fishTraitsDimensional = new int[22][3];
+    private int[] fishTraits = new int[3];
+    private double[] dFishTraits = new double[1];
     private String name;
     FishDataBase(String fish){
         fishStats(fish);
     }
     public int fishTrait(int x){
         return fishTraits[x];
+    }
+    public double dFishTrait(int x){
+        return dFishTraits[x];
     }
     public String getName(){
         return name;
@@ -22,7 +25,6 @@ public class FishDataBase {
     private void fishStats(String fish){
         if (fish.equalsIgnoreCase("SushiFish")||fish.equalsIgnoreCase("Sushi Fish"))
             SushiFish();
-        System.exit(1);
     }
 
 
@@ -32,9 +34,10 @@ public class FishDataBase {
 
     private void SushiFish(){
         name = "Sushi Fish";
-        fishTraitsDimensional[0][0] = 4;
-        fishTraitsDimensional[0][1] = 2;
-        fishTraitsDimensional[0][2] = 34;
+        fishTraits[0] = 4;
+        fishTraits[1] = 2;
+        fishTraits[2] = 34;
+        dFishTraits[0] = .1;
     }
 
 }

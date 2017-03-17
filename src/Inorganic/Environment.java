@@ -8,4 +8,10 @@ public class Environment {
     private Time time;
     private Precipitation precipitation;
     private Conditions conditions;
+
+
+
+    public Time getTime() {
+        return time;
+    }
 }

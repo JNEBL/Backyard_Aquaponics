@@ -44,6 +44,9 @@ public class School{
         if (getFishType().equalsIgnoreCase(f.getName()))
             fishSchool.add(f);
     }
+    public Fish getFish(int x){
+        return fishSchool.get(x);
+    }
     public String getFishType(){
         return fishSchool.get(0).getName();
     }

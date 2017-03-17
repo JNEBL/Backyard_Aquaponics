@@ -34,7 +34,7 @@ public class Time {
         setSecond(x.getSecond());
     }
 
-    public void incrementTime(){
+    private void incrementTime(){
         second++;
         if (second >= 60){
             setSecond(0);
@@ -94,7 +94,7 @@ public class Time {
     public int getHour(){
         return this.hour;
     }
-    public void setHour(int x){
+    private void setHour(int x){
         if (x > 0 && x <= 24)
             this.hour = x;
     }
@@ -102,7 +102,7 @@ public class Time {
     public int getMinute(){
         return this.minute;
     }
-    public void setMinute(int x){
+    private void setMinute(int x){
         if (x >= 0 && x < 60)
             this.minute = x;
     }
@@ -110,7 +110,7 @@ public class Time {
     public int getSecond(){
         return this.second;
     }
-    public void setSecond(int x){
+    private void setSecond(int x){
         if (x >= 0 && x < 60)
             this.second = x;
     }
@@ -118,7 +118,7 @@ public class Time {
     public int getDay() {
         return day;
     }
-    public void setDay(int day) {
+    private void setDay(int day) {
         if (day>0&&day<=28)
             this.day = day;
     }
@@ -126,7 +126,7 @@ public class Time {
     public int getMonth() {
         return month;
     }
-    public void setMonth(int month) {
+    private void setMonth(int month) {
         if (month>0&&month<=13)
             this.month = month;
     }
@@ -134,7 +134,7 @@ public class Time {
     public int getYear() {
         return year;
     }
-    public void setYear(int year) {
+    private void setYear(int year) {
         if (year>=0)
             this.year = year;
     }
