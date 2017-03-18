@@ -14,7 +14,18 @@ public class FishTank extends Container {
     private ArrayList<Colony> colonies = new ArrayList<>();
     private Water water;
     private School school;
-    public void addNonGenderSpecificFishSchool(int numFish,String fishName){
+    public FishTank(int length,int width,int height){
+        super(length,width,height);
+    }
+    public FishTank(){
+        super(10,10,10);
+    }
+
+    public ArrayList<School> getSchools() {
+        return schools;
+    }
+
+    public void addNonGenderSpecificFishSchool(int numFish, String fishName){
         school = new Living.Fishies.School(numFish,fishName);
         schools.add(school);
     }

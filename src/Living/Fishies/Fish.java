@@ -9,10 +9,11 @@ import Living.Life;
 public class Fish extends Life {
     private int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
             eggLength,fat,reproduction,volume,metabolism,hunger;
-    private Time age,fingerlingEndAge,breedingAge,deathAge;
+    private Time age,fingerlingEndAge,breedingAge,deathAge,birtDate;
     private FishDataBase fishDataBase;
     Fish(String fish,String gender){
         fishDataBase = new FishDataBase(fish);
+        birtDate = new Time();
         age = new Time();
         deathAge = new Time();
         super.name=fishDataBase.name;

@@ -13,4 +13,7 @@ public class GrowBed extends Container{
     ArrayList<PlantGrouping> plantGroupings = new ArrayList<>();
     private ArrayList<Colony> colonies = new ArrayList<>();
     private Water water;
+    GrowBed(int length,int width,int height){
+        super(length,width,height);
+    }
 }
