@@ -6,8 +6,8 @@ import Living.Fishies.School;
  */
 public class DevRunner {
     public  static void main(String args[]){
-        School a = new School(100,"Sushi Fish");
-        for (int x = 0;x<100;x++)
-            System.out.println(a.getFish(x).getDeathAge().toStringFull());
+        School a = new School(150,"Sushi Fish");
+        System.out.println(a.getAllDeathAge());
+        System.out.println(a.report());
     }
 }

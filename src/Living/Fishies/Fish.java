@@ -15,10 +15,10 @@ public class Fish extends Life {
         fishDataBase = new FishDataBase(fish);
         age = new Time();
         deathAge = new Time();
-        super.name=fishDataBase.getName();
+        super.name=fishDataBase.name;
         super.gender = gender;
-        deathAge = FishDecider.deathAgeDecider(fishDataBase.fishTrait(2),
-                fishDataBase.dFishTrait(0), deathAge);
+        deathAge = FishDecider.deathAgeDecider(fishDataBase.averageOldAge,
+                fishDataBase.percentDeathVariance, deathAge);
 
     }
     Fish(String fish){

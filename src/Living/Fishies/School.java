@@ -90,6 +90,14 @@ public class School{
         String ratio = both[0]+":"+both[1];
         return ratio;
     }
+    public String getAllDeathAge(){
+        String print = "";
+        for (int x = 0;x < fishSchool.size();x++){
+            print += getFish(x).getDeathAge().toStringFull() + "\n";
+        }
+        return print;
+    }
+
     private int[] reduce(int[] both){
         int d;
         if (both[0] >= 0){
