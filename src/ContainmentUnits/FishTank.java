@@ -25,6 +25,10 @@ public class FishTank extends Container {
         return schools;
     }
 
+    public School getSchool(int x) {
+        return schools.get(x);
+    }
+
     public void addNonGenderSpecificFishSchool(int numFish, String fishName){
         school = new Living.Fishies.School(numFish,fishName);
         schools.add(school);

@@ -32,6 +32,10 @@ public class Greenhouse extends Container {
         return fishTanks;
     }
 
+    public FishTank getFishTank(int x) {
+        return fishTanks.get(x);
+    }
+
     public void addFishTank(int length, int width, int height){
         fishTank = new FishTank(length,width,height);
         fishTanks.add(fishTank);

@@ -15,8 +15,11 @@ public class Yard {
 
     }
 
-    public Greenhouse getGreenhouse() {
-        return greenhouse;
+    public Greenhouse getGreenhouse(int x) {
+        return greenhouses.get(x);
+    }
+    public ArrayList<Greenhouse> getGreenhouses() {
+        return greenhouses;
     }
 
     public void addGreenhouse(){

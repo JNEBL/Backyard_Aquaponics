@@ -19,4 +19,7 @@ public class Farmer {
     public ArrayList<Yard> getYards() {
         return yards;
     }
+    public Yard getYard(int x) {
+        return yards.get(x);
+    }
 }

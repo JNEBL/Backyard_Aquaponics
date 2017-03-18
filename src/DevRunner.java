@@ -12,14 +12,12 @@ public class DevRunner {
 //        System.out.println(a.report());
         Farmer justinTheGreat = new Farmer();
         justinTheGreat.getYards().get(0).addGreenhouse();
-        justinTheGreat.getYards().get(0).getGreenhouse().addFishTank();
-        justinTheGreat.getYards().get(0).getGreenhouse().getFishTanks().get(0)
+        justinTheGreat.getYards().get(0).getGreenhouses().get(0).addFishTank();
+        justinTheGreat.getYards().get(0).getGreenhouses().get(0).getFishTanks().get(0)
                 .addNonGenderSpecificFishSchool(100,"SushiFish");
-        justinTheGreat.getYards().get(0).getGreenhouse().getFishTanks().get(0)
-                .getSchools().get(0).getAllDeathAge();
-        System.out.println(justinTheGreat.getYards().get(0).getGreenhouse().getFishTanks().get(0)
-                .getSchools().get(0).getAllDeathAge());
-        System.out.println(justinTheGreat.getYards().get(0).getGreenhouse().getFishTanks().get(0)
-                .getSchools().get(0).report());
+        System.out.println(justinTheGreat.getYards().get(0).getGreenhouses().get(0)
+                .getFishTanks().get(0).getSchools().get(0).getAllDeathAge());
+        System.out.println(justinTheGreat.getYards().get(0).getGreenhouses().get(0).
+                getFishTanks().get(0).getSchools().get(0).report());
     }
 }

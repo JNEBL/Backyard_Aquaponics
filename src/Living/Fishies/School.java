@@ -25,8 +25,6 @@ public class School{
         }
     }
     public String report(){
-        String fishType = reportFishType();
-        String gender = reportGender();
         String print = reportFishType() + "\n" + reportGender();
         return print;
     }
