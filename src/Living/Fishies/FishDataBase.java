@@ -1,14 +1,18 @@
 package Living.Fishies;
 
+import Inorganic.Time;
+import PersonalProperty.Personal.Farmer;
+
 import java.util.ArrayList;
 
 /**
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    public int averageOldAge;
-    public double percentDeathVariance;
-    public String name;
+    private int averageOldAge;
+    private double percentDeathVariance;
+    private String name;
+    private Time age = new Time(Farmer.time);
     FishDataBase(String fish){
         fishStats(fish);
     }
@@ -18,8 +22,19 @@ public class FishDataBase {
             SushiFish();
     }
 
-
-//    private void genericFish(){
+    public String getName() {
+        return name;
+    }
+    public double getPercentDeathVariance() {
+        return percentDeathVariance;
+    }
+    public int getAverageOldAge() {
+        return averageOldAge;
+    }
+    public Time getAge() {
+        return age;
+    }
+    //    private void genericFish(){
 //        name = name
 //    }
 

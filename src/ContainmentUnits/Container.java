@@ -35,7 +35,32 @@ public class Container {
     public int getWidth() {
         return width;
     }
-    public void containerReEquate(int length,int width,int height){
+    public void setHeight(int height) {
+        if (height > 0){
+            this.height = height;
+            containerReEquate(this.length,this.width,this.height);
+        }
+    }
+    public void setLength(int length) {
+        if (length > 0){
+            this.length = length;
+            if (this.height == 0)
+                containerReEquate(this.length,this.width);
+            else
+                containerReEquate(this.length,this.width,this.height);
+        }
+    }
+    public void setWidth(int width) {
+        if (width > 0){
+            this.width = width;
+            if (this.height == 0)
+                containerReEquate(this.length,this.width);
+            else
+                containerReEquate(this.length,this.width,this.height);
+        }
+    }
+
+    public void containerReEquate(int length, int width, int height){
         this.length = length;
         this.width = width;
         this.height = height;

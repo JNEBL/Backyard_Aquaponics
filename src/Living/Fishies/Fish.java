@@ -7,25 +7,24 @@ import Living.Life;
  * Created by student5 on 3/15/17.
  */
 public class Fish extends Life {
-    private int mouthSize,speed,ammoniumProduction,meat,mass,
-            eggLength,fat,reproduction,metabolism,hunger;
-    private Time age,fingerlingEndAge,breedingAge,deathAge,birtDate;
+    private int mouthSize,speed,ammoniumProduction,meat,mass,eggLength,
+            reproduction,metabolism,hunger;
+    private Time age,fingerlingEndAge,breedingAge,deathAge,birthDate;
     private FishDataBase fishDataBase;
     Fish(String fish,String gender){
         super(0,0,0);
         fishDataBase = new FishDataBase(fish);
-        birtDate = new Time();
-        age = new Time();
+        birthDate = new Time();
+        age = new Time(fishDataBase.getAge());
         deathAge = new Time();
-        super.name=fishDataBase.name;
+        super.name=fishDataBase.getName();
         super.gender = gender;
-        deathAge = FishDecider.deathAgeDecider(fishDataBase.averageOldAge,
-                fishDataBase.percentDeathVariance, deathAge);
+        deathAge = FishDecider.deathAgeDecider(fishDataBase.getAverageOldAge(),
+                fishDataBase.getPercentDeathVariance(), deathAge);
     }
     Fish(String fish){
         this(fish,FishDecider.randomGenderSelection());
     }
-
 
     @Override
     public String getName() {

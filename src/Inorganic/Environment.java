@@ -5,13 +5,9 @@ package Inorganic;
  */
 public class Environment {
     private double solarEnergy;
-    private Time time;
     private Precipitation precipitation;
     private Conditions conditions;
 
 
 
-    public Time getTime() {
-        return time;
-    }
 }

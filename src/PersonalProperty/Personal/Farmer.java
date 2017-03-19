@@ -1,6 +1,7 @@
 package PersonalProperty.Personal;
 
 import ContainmentUnits.FishTank;
+import Inorganic.Time;
 import Living.Fishies.School;
 import PersonalProperty.Property.Yard;
 
@@ -13,6 +14,7 @@ public class Farmer {
     ArrayList<Yard> yards = new ArrayList<>();
     Yard yard;
     Inventory inventory;
+    public static Time time = new Time();
     public Farmer(){
         yard = new Yard();
         yards.add(yard);
