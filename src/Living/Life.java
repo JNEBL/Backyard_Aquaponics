@@ -7,7 +7,7 @@ import ContainmentUnits.Container;
  */
 public class Life extends Container{
     protected int energy;
-    protected Boolean carnivore,herbivore;
+    protected Boolean carnivore,herbivore,bacteriophage,nitrosomonas,nitrobacter;
     protected String gender,name;
     public Life(){
         super(0,0,0);
@@ -25,4 +25,8 @@ public class Life extends Container{
     public String getGender() {
         return gender;
     }
+    public int getEnergy() {
+        return energy;
+    }
+
 }

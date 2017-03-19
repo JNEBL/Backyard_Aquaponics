@@ -19,6 +19,9 @@ public class Container {
         this.volume = ContainerMathematics.determineVolume(this.length,this.width,this.height);
         this.surfaceArea = ContainerMathematics.determineSurfaceArea(this.length,this.width);
     }
+    public Container(){
+        this.containerReEquate(0,0,0);
+    }
 
     public int getHeight() {
         return height;

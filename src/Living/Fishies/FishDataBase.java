@@ -10,9 +10,11 @@ import java.util.ArrayList;
  */
 public class FishDataBase {
     private int averageOldAge;
+    private int[] dimension = new int[3];
     private double percentDeathVariance;
     private String name;
-    private Time age = new Time(Farmer.time);
+    private Boolean carnivore,herbivore,bacteriophage,nitrosomonas,nitrobacter;
+    private Time birthDate = new Time(Farmer.time);
     FishDataBase(String fish){
         fishStats(fish);
     }
@@ -31,8 +33,26 @@ public class FishDataBase {
     public int getAverageOldAge() {
         return averageOldAge;
     }
-    public Time getAge() {
-        return age;
+    public Time getBirthDate() {
+        return birthDate;
+    }
+    public Boolean getBacteriophage() {
+        return bacteriophage;
+    }
+    public Boolean getCarnivore() {
+        return carnivore;
+    }
+    public Boolean getHerbivore() {
+        return herbivore;
+    }
+    public Boolean getNitrobacter() {
+        return nitrobacter;
+    }
+    public Boolean getNitrosomonas() {
+        return nitrosomonas;
+    }
+    public int[] getDimension() {
+        return dimension;
     }
     //    private void genericFish(){
 //        name = name
@@ -42,6 +62,14 @@ public class FishDataBase {
         name = "Sushi Fish";
         averageOldAge = 34;
         percentDeathVariance = .15;
+        carnivore = false;
+        herbivore = true;
+        bacteriophage = true;
+        nitrosomonas = false;
+        nitrobacter = false;
+        dimension[0] = 3;
+        dimension[1] = 1;
+        dimension[2] = 1;
     }
 
 }
