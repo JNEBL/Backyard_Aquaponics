@@ -15,7 +15,7 @@ public class DevRunner {
         justinTheGreat.addFishTankThroughFarmer(0,0);
         justinTheGreat.addNonGenderSpecificFishSchoolThroughFarmer(0,0,0,
                 100,"SushiFish");
-        System.out.println(justinTheGreat.getAllDeathAgeThroughFarmer(0,0,0,0));
-        System.out.println(justinTheGreat.getReportThroughFarmer(0,0,0,0));
+        System.out.println(justinTheGreat.getAllDeathAgeFishThroughFarmer(0,0,0,0));
+        System.out.println(justinTheGreat.getFishReportThroughFarmer(0,0,0,0));
     }
 }

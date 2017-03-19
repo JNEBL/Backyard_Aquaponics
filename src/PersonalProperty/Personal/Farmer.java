@@ -41,11 +41,11 @@ public class Farmer {
     public School getSchoolThroughFarmer(int yard, int greenhouse, int fishTank,int school){
         return getSpecificFishTank(yard,greenhouse,fishTank).getSchools().get(school);
     }
-    public String getAllDeathAgeThroughFarmer(int yard, int greenhouse, int fishTank,int school){
+    public String getAllDeathAgeFishThroughFarmer(int yard, int greenhouse, int fishTank,int school){
         String print = getSchoolThroughFarmer(yard,greenhouse,fishTank,school).getAllDeathAge();
         return print;
     }
-    public String getReportThroughFarmer(int yard, int greenhouse, int fishTank,int school){
+    public String getFishReportThroughFarmer(int yard, int greenhouse, int fishTank,int school){
         String print = getSchoolThroughFarmer(yard,greenhouse,fishTank,school).report();
         return print;
     }
