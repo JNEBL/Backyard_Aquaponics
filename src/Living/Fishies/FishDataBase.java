@@ -12,7 +12,7 @@ public class FishDataBase {
     private int averageOldAge,fingerlingEndAge;
     private int[] dimension = new int[3];
     private int[] breedingAge = new int[2];
-    private double percentDeathVariance;
+    private double percentDeathVariance,mouthPercentage;
     private String name;
     private Boolean carnivore,herbivore,bacteriophage,nitrosomonas,nitrobacter;
     private Time birthDate = new Time(Farmer.time);
@@ -61,7 +61,10 @@ public class FishDataBase {
     public int[] getBreedingAge() {
         return breedingAge;
     }
-//    private void genericFish(){
+    public double getMouthPercentage() {
+        return mouthPercentage;
+    }
+    //    private void genericFish(){
 //        name = name
 //    }
 
@@ -72,7 +75,7 @@ public class FishDataBase {
         fingerlingEndAge = 9;
         breedingAge[0] = 1;
         breedingAge[1] = 7;
-        carnivore = false;
+        carnivore = true;
         herbivore = true;
         bacteriophage = true;
         nitrosomonas = false;
@@ -80,6 +83,7 @@ public class FishDataBase {
         dimension[0] = 3;
         dimension[1] = 1;
         dimension[2] = 1;
+        mouthPercentage = .25;
     }
 
 }

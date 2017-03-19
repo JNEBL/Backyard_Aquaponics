@@ -86,7 +86,7 @@ class ContainerMathematics{
         return surface;
     }
     public static int determineSurfaceArea(int length,int width,int height){
-        int surface = (2 * length * width) + (2 * length * height) + (2 * width * height);
+        int surface = (length * width) + (2 * length * height) + (2 * width * height);
         return surface;
     }
 }

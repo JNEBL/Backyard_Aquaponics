@@ -30,6 +30,7 @@ public class Fish extends Life {
         this.nitrosomonas = fishDataBase.getNitrosomonas();
         dimensions = FishDecider.dimensionDecider(fishDataBase.getDimension());
         containerReEquate(dimensions[0],dimensions[1],dimensions[2]);
+        this.mouthSize = FishDecider.mouthSizeDecider(getLength(),getWidth(),fishDataBase.getMouthPercentage());
     }
     Fish(String fish){
         this(fish,FishDecider.randomGenderSelection());
@@ -72,6 +73,9 @@ public class Fish extends Life {
     }
     public Time getBreedingAge() {
         return breedingAge;
+    }
+    public int getMouthSize() {
+        return mouthSize;
     }
 }
 class FishDecider{
@@ -116,5 +120,12 @@ class FishDecider{
         int[] dim = new int[3];
         //Place Holder
         return dimensions;
+    }
+    public static int mouthSizeDecider(int length,int width,double mouthPercentage){
+        int mouthSize = length * width;
+        mouthSize = (int)(mouthSize * mouthPercentage);
+        if (mouthSize <= 1)
+            return 1;
+        return mouthSize;
     }
 }
