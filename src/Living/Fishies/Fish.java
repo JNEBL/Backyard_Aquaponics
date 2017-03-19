@@ -7,11 +7,12 @@ import Living.Life;
  * Created by student5 on 3/15/17.
  */
 public class Fish extends Life {
-    private int length,height,width,mouthSize,speed,ammoniumProduction,meat,mass,
-            eggLength,fat,reproduction,volume,metabolism,hunger;
+    private int mouthSize,speed,ammoniumProduction,meat,mass,
+            eggLength,fat,reproduction,metabolism,hunger;
     private Time age,fingerlingEndAge,breedingAge,deathAge,birtDate;
     private FishDataBase fishDataBase;
     Fish(String fish,String gender){
+        super(0,0,0);
         fishDataBase = new FishDataBase(fish);
         birtDate = new Time();
         age = new Time();
@@ -20,7 +21,6 @@ public class Fish extends Life {
         super.gender = gender;
         deathAge = FishDecider.deathAgeDecider(fishDataBase.averageOldAge,
                 fishDataBase.percentDeathVariance, deathAge);
-
     }
     Fish(String fish){
         this(fish,FishDecider.randomGenderSelection());

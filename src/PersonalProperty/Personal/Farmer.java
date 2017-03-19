@@ -1,5 +1,7 @@
 package PersonalProperty.Personal;
 
+import ContainmentUnits.FishTank;
+import Living.Fishies.School;
 import PersonalProperty.Property.Yard;
 
 import java.util.ArrayList;
@@ -21,5 +23,31 @@ public class Farmer {
     }
     public Yard getYard(int x) {
         return yards.get(x);
+    }
+    public void addFishTankThroughFarmer(){
+        getYards().get(0).getGreenhouses().get(0).addFishTank();
+    }
+    public void addFishTankThroughFarmer(int yard,int greenhouse){
+        getYards().get(yard).getGreenhouses().get(greenhouse).addFishTank();
+    }
+    public FishTank getSpecificFishTank(int yard, int greenhouse, int fishTank){
+        return getYards().get(yard).getGreenhouses().get(greenhouse).getFishTanks().get(fishTank);
+    }
+    public void addNonGenderSpecificFishSchoolThroughFarmer(int yard, int greenhouse, int fishTank,int numFish, String fishName){
+        getSpecificFishTank(yard,greenhouse,fishTank).addNonGenderSpecificFishSchool(numFish,fishName);
+    }
+    public School getSchoolThroughFarmer(int yard, int greenhouse, int fishTank,int school){
+        return getSpecificFishTank(yard,greenhouse,fishTank).getSchools().get(school);
+    }
+    public String getAllDeathAgeThroughFarmer(int yard, int greenhouse, int fishTank,int school){
+        String print = getSchoolThroughFarmer(yard,greenhouse,fishTank,school).getAllDeathAge();
+        return print;
+    }
+    public String getReportThroughFarmer(int yard, int greenhouse, int fishTank,int school){
+        String print = getSchoolThroughFarmer(yard,greenhouse,fishTank,school).report();
+        return print;
+    }
+    public void addGreenhouseThroughFarmer(int yard){
+        getYards().get(yard).addGreenhouse();
     }
 }

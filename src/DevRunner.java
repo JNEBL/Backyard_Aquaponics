@@ -11,13 +11,11 @@ public class DevRunner {
 //        System.out.println(a.getAllDeathAge());
 //        System.out.println(a.report());
         Farmer justinTheGreat = new Farmer();
-        justinTheGreat.getYards().get(0).addGreenhouse();
-        justinTheGreat.getYards().get(0).getGreenhouses().get(0).addFishTank();
-        justinTheGreat.getYards().get(0).getGreenhouses().get(0).getFishTanks().get(0)
-                .addNonGenderSpecificFishSchool(100,"SushiFish");
-        System.out.println(justinTheGreat.getYards().get(0).getGreenhouses().get(0)
-                .getFishTanks().get(0).getSchools().get(0).getAllDeathAge());
-        System.out.println(justinTheGreat.getYards().get(0).getGreenhouses().get(0).
-                getFishTanks().get(0).getSchools().get(0).report());
+        justinTheGreat.addGreenhouseThroughFarmer(0);
+        justinTheGreat.addFishTankThroughFarmer(0,0);
+        justinTheGreat.addNonGenderSpecificFishSchoolThroughFarmer(0,0,0,
+                100,"SushiFish");
+        System.out.println(justinTheGreat.getAllDeathAgeThroughFarmer(0,0,0,0));
+        System.out.println(justinTheGreat.getReportThroughFarmer(0,0,0,0));
     }
 }
