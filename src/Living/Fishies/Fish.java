@@ -1,6 +1,5 @@
 package Living.Fishies;
 
-import ContainmentUnits.Container;
 import Inorganic.Time;
 import Living.Life;
 
@@ -11,13 +10,14 @@ public class Fish extends Life {
     private int mouthSize,speed,ammoniumProduction,meat,mass,eggLength,
             reproduction,metabolism,hunger;
     private Time age,fingerlingEndAge,breedingAge,deathAge,birthDate;
-    private FishDataBase fishDataBase;
-    private  int[] dimensions = new int[3];
     Fish(String fish,String gender){
         super(0,0,0);
-        fishDataBase = new FishDataBase(fish);
+        int[] dimensions = new int[3];
+        FishDataBase fishDataBase = new FishDataBase(fish);
         birthDate = new Time(fishDataBase.getBirthDate().getCurrentTime());
         age = new Time();
+        fingerlingEndAge = new Time(FishDecider.fingerlingEndAge(fishDataBase.getFingerlingEndAge()));
+        breedingAge = new Time(FishDecider.breedingAgeDecider(fishDataBase.getBreedingAge()));
         deathAge = new Time();
         super.name=fishDataBase.getName();
         super.gender = gender;
@@ -67,7 +67,12 @@ public class Fish extends Life {
     public Time getBirthDate() {
         return birthDate;
     }
-
+    public Time getFingerlingEndAge() {
+        return fingerlingEndAge;
+    }
+    public Time getBreedingAge() {
+        return breedingAge;
+    }
 }
 class FishDecider{
     public static String randomGenderSelection(){
@@ -94,6 +99,17 @@ class FishDecider{
         int day = (int)(28 * Math.random());
         int hour = (int)(24 * Math.random());
         time.setAllTime(year,month,day,hour,0,0);
+        return time;
+    }
+    public static Time fingerlingEndAge(int fingerlingMonth){
+        Time time = new Time();
+        time.setMonth(fingerlingMonth);
+        return time;
+    }
+    public static Time breedingAgeDecider(int[] breed){
+        Time time = new Time();
+        time.setYear(breed[0]);
+        time.setMonth(breed[1]);
         return time;
     }
     public static int[] dimensionDecider(int[] dimensions){

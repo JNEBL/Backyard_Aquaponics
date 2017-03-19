@@ -9,8 +9,9 @@ import java.util.ArrayList;
  * Created by jnebl on 3/15/2017.
  */
 public class FishDataBase {
-    private int averageOldAge;
+    private int averageOldAge,fingerlingEndAge;
     private int[] dimension = new int[3];
+    private int[] breedingAge = new int[2];
     private double percentDeathVariance;
     private String name;
     private Boolean carnivore,herbivore,bacteriophage,nitrosomonas,nitrobacter;
@@ -54,7 +55,13 @@ public class FishDataBase {
     public int[] getDimension() {
         return dimension;
     }
-    //    private void genericFish(){
+    public int getFingerlingEndAge() {
+        return fingerlingEndAge;
+    }
+    public int[] getBreedingAge() {
+        return breedingAge;
+    }
+//    private void genericFish(){
 //        name = name
 //    }
 
@@ -62,6 +69,9 @@ public class FishDataBase {
         name = "Sushi Fish";
         averageOldAge = 34;
         percentDeathVariance = .15;
+        fingerlingEndAge = 9;
+        breedingAge[0] = 1;
+        breedingAge[1] = 7;
         carnivore = false;
         herbivore = true;
         bacteriophage = true;
