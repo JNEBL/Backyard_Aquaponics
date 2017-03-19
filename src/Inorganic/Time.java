@@ -1,6 +1,7 @@
 package Inorganic;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 /**
  * Created by student5 on 3/15/17.
@@ -8,6 +9,7 @@ import java.text.DecimalFormat;
 public class Time {
     DecimalFormat format = new DecimalFormat("00");
     DecimalFormat f = new DecimalFormat("0000");
+    ArrayList<Event> events = new ArrayList<>();
     private Time time;
     private int year,month,day,hour,minute,second;
     public Time(){
