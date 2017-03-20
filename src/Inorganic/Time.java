@@ -17,6 +17,7 @@ public class Time {
     public ArrayList<Event> eventsYear = new ArrayList<>();
     private Time time;
     private int year,month,day,hour,minute,second;
+
     public Time(){
         setYear(0);
         setMonth(1);
@@ -246,6 +247,7 @@ public class Time {
                             if (currentTime.getMonth() == eventsSecond.get(x).getTime().getMonth()){
                                 if (currentTime.getYear() == eventsSecond.get(x).getTime().getYear()){
                                     checkSecondEvents(eventsSecond.get(x).getTime(),x + 1);
+                                    x+=eventsSecond.size();
                                 }
                             }
                         }
@@ -278,6 +280,7 @@ public class Time {
                         if (currentTime.getMonth() == eventsMinutes.get(x).getTime().getMonth()){
                             if (currentTime.getYear() == eventsMinutes.get(x).getTime().getYear()){
                                 checkMinuteEvents(eventsMinutes.get(x).getTime(),x + 1);
+                                x+=eventsMinutes.size();
                             }
                         }
                     }
@@ -306,6 +309,7 @@ public class Time {
                     if (currentTime.getMonth() == eventsHour.get(x).getTime().getMonth()){
                         if (currentTime.getYear() == eventsHour.get(x).getTime().getYear()){
                             checkHourEvents(eventsHour.get(x).getTime(),x + 1);
+                            x+=eventsHour.size();
                         }
                     }
                 }
@@ -330,6 +334,7 @@ public class Time {
                 if (currentTime.getMonth() == eventsDay.get(x).getTime().getMonth()){
                     if (currentTime.getYear() == eventsDay.get(x).getTime().getYear()){
                         checkDayEvents(eventsDay.get(x).getTime(),x + 1);
+                        x+=eventsDay.size();
                     }
                 }
             }
@@ -351,6 +356,7 @@ public class Time {
             if (currentTime.getMonth() == eventsMonth.get(x).getTime().getMonth()){
                 if (currentTime.getYear() == eventsMonth.get(x).getTime().getYear()){
                     checkMonthEvents(eventsMonth.get(x).getTime(),x + 1);
+                    x+=eventsMonth.size();
                 }
             }
         }
@@ -365,15 +371,119 @@ public class Time {
 
     private void checkYearEvents(Time currentTime){
         for (int x = 0;x < eventsYear.size();x++){
-            if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
+            if (currentTime.getYear() >= eventsYear.get(x).getTime().getYear()){
                 checkYearEvents(eventsYear.get(x).getTime(),x + 1);
+                x+=eventsYear.size();
             }
         }
     }
     private void checkYearEvents(Time currentTime,int x){
-        if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
+        if (currentTime.getYear() >= eventsYear.get(x).getTime().getYear()){
             checkYearEvents(eventsYear.get(x).getTime(),x + 1);
         }
+    }
+
+    public void addSecondEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsSecond.size();x++){
+            if (event.getTime().getSecond() <= eventsSecond.get(x).getTime().getSecond()){
+                if (event.getTime().getMinute() <= eventsSecond.get(x).getTime().getMinute()){
+                    if (event.getTime().getHour() <= eventsSecond.get(x).getTime().getHour()){
+                        if (event.getTime().getDay() <= eventsSecond.get(x).getTime().getDay()){
+                            if (event.getTime().getMonth() <= eventsSecond.get(x).getTime().getMonth()){
+                                if (event.getTime().getYear() <= eventsSecond.get(x).getTime().getYear()){
+                                    eventsSecond.add(x,event);
+                                    finder = false;
+                                    x+=eventsSecond.size();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (finder)
+            eventsSecond.add(event);
+    }
+    public void addMinuteEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsMinutes.size();x++){
+            if (event.getTime().getMinute() <= eventsMinutes.get(x).getTime().getMinute()){
+                if (event.getTime().getHour() <= eventsMinutes.get(x).getTime().getHour()){
+                    if (event.getTime().getDay() <= eventsMinutes.get(x).getTime().getDay()){
+                        if (event.getTime().getMonth() <= eventsMinutes.get(x).getTime().getMonth()){
+                            if (event.getTime().getYear() <= eventsMinutes.get(x).getTime().getYear()){
+                                eventsMinutes.add(x,event);
+                                finder = false;
+                                x+=eventsMinutes.size();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (finder)
+            eventsMinutes.add(event);
+    }
+    public void addHourEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsHour.size();x++){
+            if (event.getTime().getHour() <= eventsHour.get(x).getTime().getHour()){
+                if (event.getTime().getDay() <= eventsHour.get(x).getTime().getDay()){
+                    if (event.getTime().getMonth() <= eventsHour.get(x).getTime().getMonth()){
+                        if (event.getTime().getYear() <= eventsHour.get(x).getTime().getYear()){
+                            eventsHour.add(x,event);
+                            finder = false;
+                            x+=eventsHour.size();
+                        }
+                    }
+                }
+            }
+        }
+        if (finder)
+            eventsHour.add(event);
+    }
+    public void addDayEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsDay.size();x++){
+            if (event.getTime().getDay() <= eventsDay.get(x).getTime().getDay()){
+                if (event.getTime().getMonth() <= eventsDay.get(x).getTime().getMonth()){
+                    if (event.getTime().getYear() <= eventsDay.get(x).getTime().getYear()){
+                        eventsDay.add(x,event);
+                        finder = false;
+                        x+=eventsDay.size();
+                    }
+                }
+            }
+        }
+        if (finder)
+            eventsDay.add(event);
+    }
+    public void addMonthEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsMonth.size();x++){
+            if (event.getTime().getMonth() <= eventsMonth.get(x).getTime().getMonth()){
+                if (event.getTime().getYear() <= eventsMonth.get(x).getTime().getYear()){
+                    eventsMonth.add(x,event);
+                    finder = false;
+                    x+=eventsMonth.size();
+                }
+            }
+        }
+        if (finder)
+            eventsMonth.add(event);
+    }
+    public void addYearEvents(Event event){
+        boolean finder = true;
+        for (int x = 0;x < eventsYear.size();x++){
+            if (event.getTime().getYear() <= eventsYear.get(x).getTime().getYear()){
+                eventsYear.add(x,event);
+                finder = false;
+                x+=eventsYear.size();
+            }
+        }
+        if (finder)
+            eventsYear.add(event);
     }
 
     public String toStringFull(){
