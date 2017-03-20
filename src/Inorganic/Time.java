@@ -371,14 +371,14 @@ public class Time {
 
     private void checkYearEvents(Time currentTime){
         for (int x = 0;x < eventsYear.size();x++){
-            if (currentTime.getYear() >= eventsYear.get(x).getTime().getYear()){
+            if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
                 checkYearEvents(eventsYear.get(x).getTime(),x + 1);
                 x+=eventsYear.size();
             }
         }
     }
     private void checkYearEvents(Time currentTime,int x){
-        if (currentTime.getYear() >= eventsYear.get(x).getTime().getYear()){
+        if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
             checkYearEvents(eventsYear.get(x).getTime(),x + 1);
         }
     }
