@@ -9,7 +9,12 @@ import java.util.ArrayList;
 public class Time {
     DecimalFormat format = new DecimalFormat("00");
     DecimalFormat f = new DecimalFormat("0000");
-    ArrayList<Event> events = new ArrayList<>();
+    public ArrayList<Event> eventsSecond = new ArrayList<>();
+    public ArrayList<Event> eventsMinutes = new ArrayList<>();
+    public ArrayList<Event> eventsHour = new ArrayList<>();
+    public ArrayList<Event> eventsDay = new ArrayList<>();
+    public ArrayList<Event> eventsMonth = new ArrayList<>();
+    public ArrayList<Event> eventsYear = new ArrayList<>();
     private Time time;
     private int year,month,day,hour,minute,second;
     public Time(){
@@ -39,21 +44,33 @@ public class Time {
 
     private void incrementTime(){
         second++;
+        if (eventsSecond.size() > 0)
+            checkSecondEvents(getCurrentTime());
         if (second >= 60){
             setSecond(0);
             minute++;
+            if (eventsMinutes.size() > 0)
+                checkMinuteEvents(getCurrentTime());
             if (minute >= 60){
                 setMinute(0);
                 hour++;
+                if (eventsHour.size() > 0)
+                    checkHourEvents(getCurrentTime());
                 if (hour > 24) {
                     setHour(1);
                     day++;
+                    if (eventsDay.size() > 0)
+                        checkDayEvents(getCurrentTime());
                     if (day > 28){
                         setDay(1);
                         month++;
+                        if (eventsMonth.size() > 0)
+                            checkMonthEvents(getCurrentTime());
                         if (month > 13){
                             setMonth(1);
                             year++;
+                            if (eventsYear.size() > 0)
+                                checkYearEvents(getCurrentTime());
                         }
                     }
                 }
@@ -218,6 +235,145 @@ public class Time {
     public Time getCurrentTime(){
         time = new Time(getYear(),getMonth(),getDay(),getHour(),getMinute(),getSecond());
         return time;
+    }
+
+    private void checkSecondEvents(Time currentTime){
+        for (int x = 0;x < eventsSecond.size();x++){
+            if (currentTime.getSecond() == eventsSecond.get(x).getTime().getSecond()){
+                if (currentTime.getMinute() == eventsSecond.get(x).getTime().getMinute()){
+                    if (currentTime.getHour() == eventsSecond.get(x).getTime().getHour()){
+                        if (currentTime.getDay() == eventsSecond.get(x).getTime().getDay()){
+                            if (currentTime.getMonth() == eventsSecond.get(x).getTime().getMonth()){
+                                if (currentTime.getYear() == eventsSecond.get(x).getTime().getYear()){
+                                    checkSecondEvents(eventsSecond.get(x).getTime(),x + 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void checkSecondEvents(Time currentTime,int x){
+        if (currentTime.getSecond() == eventsSecond.get(x).getTime().getSecond()){
+            if (currentTime.getMinute() == eventsSecond.get(x).getTime().getMinute()){
+                if (currentTime.getHour() == eventsSecond.get(x).getTime().getHour()){
+                    if (currentTime.getDay() == eventsSecond.get(x).getTime().getDay()){
+                        if (currentTime.getMonth() == eventsSecond.get(x).getTime().getMonth()){
+                            if (currentTime.getYear() == eventsSecond.get(x).getTime().getYear()){
+                                checkSecondEvents(eventsSecond.get(x).getTime(),x + 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void checkMinuteEvents(Time currentTime){
+        for (int x = 0;x < eventsMinutes.size();x++){
+            if (currentTime.getMinute() == eventsMinutes.get(x).getTime().getMinute()){
+                if (currentTime.getHour() == eventsMinutes.get(x).getTime().getHour()){
+                    if (currentTime.getDay() == eventsMinutes.get(x).getTime().getDay()){
+                        if (currentTime.getMonth() == eventsMinutes.get(x).getTime().getMonth()){
+                            if (currentTime.getYear() == eventsMinutes.get(x).getTime().getYear()){
+                                checkMinuteEvents(eventsMinutes.get(x).getTime(),x + 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void checkMinuteEvents(Time currentTime,int x){
+        if (currentTime.getMinute() == eventsMinutes.get(x).getTime().getMinute()){
+            if (currentTime.getHour() == eventsMinutes.get(x).getTime().getHour()){
+                if (currentTime.getDay() == eventsMinutes.get(x).getTime().getDay()){
+                    if (currentTime.getMonth() == eventsMinutes.get(x).getTime().getMonth()){
+                        if (currentTime.getYear() == eventsMinutes.get(x).getTime().getYear()){
+                            checkMinuteEvents(eventsMinutes.get(x).getTime(),x + 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void checkHourEvents(Time currentTime){
+        for (int x = 0;x < eventsHour.size();x++){
+            if (currentTime.getHour() == eventsHour.get(x).getTime().getHour()){
+                if (currentTime.getDay() == eventsHour.get(x).getTime().getDay()){
+                    if (currentTime.getMonth() == eventsHour.get(x).getTime().getMonth()){
+                        if (currentTime.getYear() == eventsHour.get(x).getTime().getYear()){
+                            checkHourEvents(eventsHour.get(x).getTime(),x + 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void checkHourEvents(Time currentTime,int x){
+        if (currentTime.getHour() == eventsHour.get(x).getTime().getHour()){
+            if (currentTime.getDay() == eventsHour.get(x).getTime().getDay()){
+                if (currentTime.getMonth() == eventsHour.get(x).getTime().getMonth()){
+                    if (currentTime.getYear() == eventsHour.get(x).getTime().getYear()){
+                        checkHourEvents(eventsHour.get(x).getTime(),x + 1);
+                    }
+                }
+            }
+        }
+    }
+
+    private void checkDayEvents(Time currentTime){
+        for (int x = 0;x < eventsDay.size();x++){
+            if (currentTime.getDay() == eventsDay.get(x).getTime().getDay()){
+                if (currentTime.getMonth() == eventsDay.get(x).getTime().getMonth()){
+                    if (currentTime.getYear() == eventsDay.get(x).getTime().getYear()){
+                        checkDayEvents(eventsDay.get(x).getTime(),x + 1);
+                    }
+                }
+            }
+        }
+    }
+    private void checkDayEvents(Time currentTime,int x){
+        if (currentTime.getDay() == eventsDay.get(x).getTime().getDay()){
+            if (currentTime.getMonth() == eventsDay.get(x).getTime().getMonth()){
+                if (currentTime.getYear() == eventsDay.get(x).getTime().getYear()){
+                    checkDayEvents(eventsDay.get(x).getTime(),x + 1);
+                }
+            }
+        }
+
+    }
+
+    private void checkMonthEvents(Time currentTime){
+        for (int x = 0;x < eventsMonth.size();x++){
+            if (currentTime.getMonth() == eventsMonth.get(x).getTime().getMonth()){
+                if (currentTime.getYear() == eventsMonth.get(x).getTime().getYear()){
+                    checkMonthEvents(eventsMonth.get(x).getTime(),x + 1);
+                }
+            }
+        }
+    }
+    private void checkMonthEvents(Time currentTime,int x){
+        if (currentTime.getMonth() == eventsMonth.get(x).getTime().getMonth()){
+            if (currentTime.getYear() == eventsMonth.get(x).getTime().getYear()){
+                checkMonthEvents(eventsMonth.get(x).getTime(),x + 1);
+            }
+        }
+    }
+
+    private void checkYearEvents(Time currentTime){
+        for (int x = 0;x < eventsYear.size();x++){
+            if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
+                checkYearEvents(eventsYear.get(x).getTime(),x + 1);
+            }
+        }
+    }
+    private void checkYearEvents(Time currentTime,int x){
+        if (currentTime.getYear() == eventsYear.get(x).getTime().getYear()){
+            checkYearEvents(eventsYear.get(x).getTime(),x + 1);
+        }
     }
 
     public String toStringFull(){

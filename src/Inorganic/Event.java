@@ -5,5 +5,11 @@ package Inorganic;
  */
 public class Event {
     private Time time;
-    
+    Event(Time time){
+        this.time = time;
+    }
+
+    public Time getTime() {
+        return time;
+    }
 }
